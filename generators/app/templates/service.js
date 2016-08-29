@@ -1,10 +1,10 @@
 'use strict';
-<% if (localAuth ||authentication.length) { %>const authentication = require('./authentication');<% } %>
-<% for (var i = 0; i < services.length; i++) { %>const <%= services[i] %> = require('./<%= services[i] %>');
+<% if (localAuth ||authentication.length) { %>import authentication from './authentication';<% } %>
+<% for (var i = 0; i < services.length; i++) { %>import <%= services[i] %> from './<%= services[i] %>';
 <% } %><% if (database === 'sqlite') { %>
-const path = require('path');
-const fs = require('fs-extra');<% } %><% if (database === 'mongodb') { %>const mongoose = require('mongoose');<% } %><% if (database === 'sqlite' || database === 'mssql' || database === 'postgres' || database === 'mysql' || database === 'mariadb') { %>const Sequelize = require('sequelize');<% } %>
-module.exports = function() {
+import path from 'path';
+import fs from 'fs-extra';<% } %><% if (database === 'mongodb') { %>import mongoose from 'mongoose';<% } %><% if (database === 'sqlite' || database === 'mssql' || database === 'postgres' || database === 'mysql' || database === 'mariadb') { %>import Sequelize from 'sequelize';<% } %>
+export default () => {
   const app = this;
   <% if (database === 'sqlite') { %>
   fs.ensureDirSync( path.dirname(app.get('sqlite')) );

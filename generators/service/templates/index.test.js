@@ -1,10 +1,10 @@
 'use strict';
 
-const assert = require('assert');
-const app = require('../../../src/app');
+import assert from 'assert';
+import app from '../../../src/app';
 
-describe('<%= name %> service', function() {
-  it('registered the <%= pluralizedName %> service', () => {
-    assert.ok(app.service('<%= pluralizedName %>'));
-  });
+describe('<%= name %> service', () => {
+    it('registered the <%= pluralizedName %> service', () => {
+        assert.ok(app.service('<%= pluralizedName %>'));
+    });
 });

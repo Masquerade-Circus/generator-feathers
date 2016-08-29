@@ -1,10 +1,10 @@
 'use strict';
 
-const globalHooks = require('../../../hooks');
-const hooks = require('feathers-hooks');
-<% if (authentication) { %>const auth = require('feathers-authentication').hooks;<% } %>
+import globalHooks from '../../../hooks';
+import hooks from 'feathers-hooks';
+<% if (authentication) { %>import {hooks as auth} from 'feathers-authentication';<% } %>
 
-exports.before = {
+var before = {
   all: [<% if (authentication && name !== 'user') { %>
     auth.verifyToken(),
     auth.populateUser(),
@@ -44,7 +44,7 @@ exports.before = {
   <% } %>]
 };
 
-exports.after = {
+var after = {
   all: [<% if (authentication && name === 'user') { %>hooks.remove('password')<% } %>],
   find: [],
   get: [],
@@ -53,3 +53,5 @@ exports.after = {
   patch: [],
   remove: []
 };
+
+export default {before, after}

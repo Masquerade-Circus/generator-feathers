@@ -7,10 +7,10 @@
 
 const defaults = {};
 
-module.exports = function(options) {
+export default options => {
   options = Object.assign({}, defaults, options);
 
-  return function(hook) {
+  return hook => {
     hook.<%= codeName %> = true;
   };
 };

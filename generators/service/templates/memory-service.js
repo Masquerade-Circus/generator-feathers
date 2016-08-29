@@ -1,9 +1,9 @@
 'use strict';
 
-const service = require('feathers-memory');
-const hooks = require('./hooks');
+import service from 'feathers-memory';
+import hooks from './hooks';
 
-module.exports = function(){
+export default () => {
   const app = this;
 
   let options = {

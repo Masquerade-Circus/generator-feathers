@@ -1,10 +1,10 @@
 'use strict';
 
-const service = require('feathers-mongoose');
-const <%= name %> = require('./<%= name %>-model');
-const hooks = require('./hooks');
+import service from 'feathers-mongoose';
+import <%= name %> from './<%= name %>-model';
+import hooks from './hooks';
 
-module.exports = function() {
+export default () => {
   const app = this;
 
   const options = {

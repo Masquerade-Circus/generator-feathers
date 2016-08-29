@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function(app) {
-  return function(req, res, next) {
-    // Perform actions
+export default app => {
+    return (req, res, next) => {
+        // Perform actions
 
-    next();
-  };
+        next();
+    };
 };

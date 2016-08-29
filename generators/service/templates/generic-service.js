@@ -1,6 +1,6 @@
 'use strict';
 
-const hooks = require('./hooks');
+import hooks from './hooks';
 
 class Service {
   constructor(options) {

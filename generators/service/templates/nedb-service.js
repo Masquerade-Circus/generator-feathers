@@ -1,11 +1,11 @@
 'use strict';
 
-const path = require('path');
-const NeDB = require('nedb');
-const service = require('feathers-nedb');
-const hooks = require('./hooks');
+import path from 'path';
+import NeDB from 'nedb';
+import service from 'feathers-nedb';
+import hooks from './hooks';
 
-module.exports = function(){
+export default () => {
   const app = this;
 
   const db = new NeDB({

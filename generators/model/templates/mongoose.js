@@ -1,11 +1,11 @@
 'use strict';
 
 // <%= name %>-model.js - A mongoose model
-// 
+//
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const <%= name %>Schema = new Schema({<% if(name === 'user') { %><% for (var i = 0; i < providers.length; i++) { %>
@@ -20,4 +20,4 @@ const <%= name %>Schema = new Schema({<% if(name === 'user') { %><% for (var i =
 
 const <%= name %>Model = mongoose.model('<%= name %>', <%= name %>Schema);
 
-module.exports = <%= name %>Model;
+export default <%= name %>Model;

@@ -1,10 +1,10 @@
 'use strict';
 
-const service = require('feathers-sequelize');
-const <%= name %> = require('./<%= name %>-model');
-const hooks = require('./hooks');
+import service from 'feathers-sequelize';
+import <%= name %> from './<%= name %>_model';
+import hooks from './hooks';
 
-module.exports = function(){
+export default () => {
   const app = this;
 
   const options = {

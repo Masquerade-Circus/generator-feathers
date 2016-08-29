@@ -1,10 +1,10 @@
 'use strict';
 
-const assert = require('assert');
-const <%= codeName %> = require('../../../../<%= hookPath %>');
+import assert from 'assert';
+import <%= codeName %> from '../../../../<%= hookPath %>';
 
-describe('<%= service %> <%= codeName %> hook', function() {
-  it('hook can be used', function() {
+describe('<%= service %> <%= codeName %> hook', () => {
+  it('hook can be used', () => {
     const mockHook = {
       type: '<%= type %>',
       app: {},

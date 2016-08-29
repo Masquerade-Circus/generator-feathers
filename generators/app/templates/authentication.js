@@ -1,9 +1,9 @@
 'use strict';
 
-const authentication = require('feathers-authentication');
+import authentication from 'feathers-authentication';
 <% for (var i = 0; i < authentication.length; i++) { %>
-const <%= S(authentication[i].name).capitalize().s %>Strategy = require('<%= authentication[i].strategy %>').Strategy;<% if (authentication[i].tokenStrategy) { %>
-const <%= S(authentication[i].name).capitalize().s %>TokenStrategy = require('<%= authentication[i].tokenStrategy %>')<% if (authentication[i].tokenStrategyExposedNormally) { %>.Strategy<% } %>;<% }} %>
+import <%= S(authentication[i].name).capitalize().s %>{Strategy} from '<%= authentication[i].strategy %>';<% if (authentication[i].tokenStrategy) { %>
+import <%= S(authentication[i].name).capitalize().s %><% if (authentication[i].tokenStrategyExposedNormally) { %>{<% } %>Strategy<% if (authentication[i].tokenStrategyExposedNormally) { %>}<% } %> from '<%= authentication[i].tokenStrategy %>';<% }} %>
 
 module.exports = function() {
   const app = this;

@@ -5,5 +5,4 @@
 const <%= name %>Model = {
   text: {type: String, required: true, index: true}
 };
-
-module.exports = <%= name %>Model;
+export default <%= name %>Model;
